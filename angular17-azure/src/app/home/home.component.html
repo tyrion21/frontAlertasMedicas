@@ -1,0 +1,24 @@
+@if (!loginDisplay) {
+  <div style="position: relative; width: 100%; height: calc(100vh - 64px); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+    <img src="assets/fondo-salud.avif" alt="Descripción de la imagen" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+
+    <div style="color: #000; text-align: center; padding: 0;">
+      <p class="welcome"><strong>¡Bienvenido al inicio rápido!</strong></p>
+      <p><strong>La siguiente página muestra cómo configurar MSAL Angular para iniciar sesión, cerrar sesión, proteger una ruta y adquirir un token de acceso para un recurso protegido como Microsoft Graph.</strong></p>
+      <p><strong>Por favor, inicie sesión para ver su información de perfil.</strong></p>
+      <p><strong>Clase de Cloud Native I con el profesor Carlos Valverde.</strong></p>
+    </div>
+  </div>
+}
+
+@if (loginDisplay) {
+  <div style="position: relative; width: 100%; height: calc(100vh - 64px); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+    <img src="assets/fondo-salud.avif" alt="Descripción de la imagen" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+
+    <div style="color: #000; text-align: center; padding: 0;">
+      <p><strong>¡Inicio de sesión exitoso!</strong></p>
+      <p><strong>Solicite su información de perfil haciendo clic en Perfil arriba.</strong></p>
+      <p><strong>Clase de Cloud Native I con el profesor Carlos Valverde.</strong></p>
+    </div>
+  </div>
+}

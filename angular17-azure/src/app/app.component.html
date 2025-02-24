@@ -1,0 +1,32 @@
+<mat-toolbar color="warn">
+  <a class="title" href="/"style="display: flex; align-items: center;">
+    <mat-icon style="font-size: 24px; margin-right: 8px;">medical_services</mat-icon>
+    {{ title }}</a>
+
+  <div class="toolbar-spacer"></div>
+
+  <a mat-button [routerLink]="['profile']">Perfil</a>
+
+  @if (!loginDisplay) {
+  <button mat-raised-button [matMenuTriggerFor]="loginMenu">Login</button>
+  }
+  <mat-menu #loginMenu="matMenu">
+    <button mat-menu-item (click)="loginRedirect()">Login usando Redirect</button>
+    <button mat-menu-item (click)="loginPopup()">Login usando Popup</button>
+  </mat-menu>
+
+  @if (loginDisplay) {
+  <button mat-raised-button [matMenuTriggerFor]="logoutMenu">Logout</button>
+  }
+  <mat-menu #logoutMenu="matMenu">
+    <button mat-menu-item (click)="logout()">Logout usando Redirect</button>
+    <button mat-menu-item (click)="logout(true)">Logout usando Popup</button>
+  </mat-menu>
+
+</mat-toolbar>
+<div class="container">
+  <!--This is to avoid reload during acquireTokenSilent() because of hidden iframe -->
+  @if (!isIframe) {
+  <router-outlet></router-outlet>
+  }
+</div>
